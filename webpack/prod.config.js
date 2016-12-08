@@ -5,19 +5,16 @@ const webpack = require('webpack');
 
 const assetsPath = path.resolve(__dirname, '../public/assets');
 
-const { webpackHost, webpackPort } = require('../config/env');
-
 const webpackIsomorphicToolsConfig = require('./webpack-isomorphic-tools');
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 
 const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(webpackIsomorphicToolsConfig);
 
 module.exports = {
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   context: path.resolve(__dirname, '..'),
   entry: {
     main: [
-      `webpack-hot-middleware/client?path=http://${webpackHost}:${webpackPort}/__webpack_hmr`,
       './src/index.js',
     ],
   },
@@ -25,7 +22,7 @@ module.exports = {
     path: assetsPath,
     filename: '[name].js',
     chunkFilename: '[name]-[chunkhash].js',
-    publicPath: `http://${webpackHost}:${webpackPort}/assets/`,
+    publicPath: '/assets/',
   },
   module: {
     loaders: [
@@ -45,16 +42,26 @@ module.exports = {
     extensions: ['', '.json', '.js', '.jsx'],
   },
   plugins: [
-    // hot reload
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.IgnorePlugin(/webpack-stats\.json$/),
     new webpack.DefinePlugin({
-      __CLIENT__: true,
-      __DEVTOOLS__: true,
       'process.env': {
-        NODE_ENV: '"development"',
+        NODE_ENV: '"production"',
+      },
+
+      __CLIENT__: true,
+      __DEVTOOLS__: false,
+    }),
+
+    // ignore dev config
+    new webpack.IgnorePlugin(/\.\/dev/, /\/config$/),
+
+    // optimizations
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
       },
     }),
-    webpackIsomorphicToolsPlugin.development(),
+    webpackIsomorphicToolsPlugin,
   ],
 };
