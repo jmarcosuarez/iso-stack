@@ -1,2 +1,47 @@
 # iso-stack
-Isomorphic Stack
+
+One Paragraph of project description goes here
+
+## Getting Started
+
+Creating isomorphic React Redux App
+
+### Installing
+
+First install dependencies:
+
+```
+npm install
+```
+
+Then run start script:
+
+```
+npm start
+```
+
+Then, surf to:
+
+```
+http://localhost:3000/
+```
+
+## Built With
+
+* [react](https://github.com/facebook/react) - A declarativeJavaScript library 
+* [redux](https://github.com/reactjs/redux) - Predictable state container
+
+## Authors
+
+* **MS** - *Initial work* - [jmarcosuarez](https://github.com/jmarcosuarez)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Hat tip to anyone who's code was used
+* Inspiration
+* etc
+
