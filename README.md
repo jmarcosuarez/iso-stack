@@ -4,7 +4,7 @@ One Paragraph of project description goes here
 
 ## Getting Started
 
-Creating isomorphic React Redux App
+Creating an isomorphic React Redux App
 
 ### Installing
 
@@ -14,17 +14,18 @@ First install dependencies:
 npm install
 ```
 
-Then run start script:
+To run in development:
+
+```
+npm run dev
+```
+
+To run in production:(without development reload features & other stuff) 
 
 ```
 npm start
 ```
 
-Then, surf to:
-
-```
-http://localhost:3000/
-```
 
 ## Built With
 
