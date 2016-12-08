@@ -1,0 +1,12 @@
+{
+  "javascript": {
+    "main": "http://localhost:3002/assets/main-a024c1ae17cfdfc90782.js"
+  },
+  "styles": {},
+  "assets": {
+    "./src/containers/App.css": {
+      "app": "app___2qyYZ",
+      "_style": "body {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\n.app___2qyYZ {\r\n  font-size: 72px;\r\n}\r\n"
+    }
+  }
+}
