@@ -4,7 +4,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/server';
 import serialize from 'serialize-javascript';
-import { webpackHost, webpackPort } from '../../config/env';
+// import { webpackHost, webpackPort } from '../../config/env';
 
 export default class Default extends React.Component {
   render() {
@@ -37,11 +37,7 @@ export default class Default extends React.Component {
             charSet="UTF-8"
           />
           <script
-            src={
-              process.env.NODE_ENV === 'development' ?
-              `http://${webpackHost}:${webpackPort}/assets/main.js` :
-              '/assets/main.js'
-            }
+            src={assets.javascript.main}
             charSet="UTF-8"
           />
         </body>
