@@ -34,7 +34,16 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
+        // "loader" property changed to "loaders" and is now an array!
+        loaders: [
+          // ORDER MATTERS; "react-hot" needs to be on the left,
+          //  because webpack processes the loaders from right-to-left
+          'react-hot',
+
+          // webpack forbids the "loader.query" property when you have multiple loaders;
+          //  se a queryString to pass those details
+          'babel?presets[]=react,presets[]=es2015',
+        ],
       },
       {
         test: /\.css$/,
