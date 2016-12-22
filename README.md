@@ -27,6 +27,9 @@ npm start
 ```
 
 
+The app is running in localhost:3000
+
+
 ## Built With
 
 * [react](https://github.com/facebook/react) - A declarativeJavaScript library 
