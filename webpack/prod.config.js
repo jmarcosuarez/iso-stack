@@ -39,7 +39,9 @@ module.exports = {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(
                   'style',
+
                   'css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!postcss'
+
                 ),
       },
       {
