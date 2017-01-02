@@ -1,0 +1,70 @@
+{
+  "name": "iso-stack",
+  "version": "1.0.0",
+  "description": "Isomorphic react redux full-stack app",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --verbose --colors --display-error-details --config webpack/prod.config.js",
+    "postinstall": "npm run build",
+    "dev": "concurrently --kill-others \"npm run dev-api\" \"npm run dev-server\" \"npm run webpack-dev-server\"",
+    "dev-api": "NODE_ENV=development nodemon --exec babel-node ./bin/api.js",
+    "dev-server": "NODE_ENV=development nodemon --exec babel-node ./bin/server.js",
+    "webpack-dev-server": "NODE_ENV=development babel-node ./bin/webpack-dev-server.js",
+    "start": "concurrently --kill-others \"npm run start-api\" \"npm run start-server\"",
+    "start-api": "NODE_ENV=production babel-node ./bin/api.js",
+    "start-server": "NODE_ENV=production babel-node ./bin/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmarcosuarez/iso-stack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmarcosuarez/iso-stack/issues"
+  },
+  "homepage": "https://github.com/jmarcosuarez/iso-stack#readme",
+  "devDependencies": {
+    "eslint": "^3.11.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0",
+    "nodemon": "^1.11.0",
+    "react-hot-loader": "^1.3.1",
+    "redux-devtools": "^3.3.1",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.1.1",
+    "webpack-dev-middleware": "^1.8.4",
+    "webpack-hot-middleware": "^2.13.2"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.5.3",
+    "babel-cli": "^6.18.0",
+    "babel-loader": "^6.2.9",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "concurrently": "^3.1.0",
+    "css-loader": "^0.26.1",
+    "express": "^4.14.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "http-proxy": "^1.16.2",
+    "postcss-loader": "^1.2.0",
+    "pretty-error": "^2.0.2",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-redux": "^4.4.6",
+    "react-router": "^3.0.0",
+    "react-router-redux": "^4.0.7",
+    "redux": "^3.6.0",
+    "serialize-javascript": "^1.3.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.14.0",
+    "webpack-isomorphic-tools": "^2.6.4"
+  }
+}
