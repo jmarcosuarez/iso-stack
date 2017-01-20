@@ -1,7 +1,7 @@
 {
   "name": "iso-stack",
   "version": "1.0.0",
-  "description": "Isomorphic react redux full-stack app",
+  "description": "Isomorphic react redux full-stack app boilerplate",
   "main": "index.js",
   "scripts": {
     "build": "webpack --verbose --colors --display-error-details --config webpack/prod.config.js",
