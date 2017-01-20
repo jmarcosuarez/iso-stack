@@ -1,10 +1,10 @@
 # iso-stack
 
-One Paragraph of project description goes here
+Isomorphic react redux full-stack app boilerplate
 
 ## Getting Started
 
-Creating an isomorphic React Redux App
+Base repository for an isomorphic React Redux App
 
 ### Installing
 
